@@ -1,0 +1,535 @@
+machine_type: "transformadora"  #El objetivo de esta sera duplicar la entrada ejemplo ingresas DJK te devolvera DJKDJK y asi con cualquiera
+q_states:                       # Siempre y cuando tu cadena sea con las letras del alfabeto.
+  q_list:
+    - "q0"
+    - "q1"
+    - "q2"
+    - "q3"
+    - "q4"
+    - "q5"
+    - "q6"
+    - "q7"
+    - "q8"
+    - "q9"
+    - "q10"
+    - "q11"
+    - "q12"
+    - "q13"
+    - "q14"
+    - "q15"
+    - "q16"
+  initial: "q0"
+  final: "q_accept"
+alphabet:
+  - "D"
+  - "J"
+  - "K"
+tape_alphabet:
+  - "D"
+  - "J"
+  - "K"
+  - "X"
+  - "Y"
+  - "B"  
+delta:
+  - params:
+      initial_state: "q0" #Inicio q0
+      tape_input: "D"
+    output:
+      final_state: "q1"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q0"
+      tape_input: "J"
+    output:
+      final_state: "q1"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q0"
+      tape_input: "K"
+    output:
+      final_state: "q1"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"   #Inicio q1
+      tape_input: "D"
+    output:
+      final_state: "q1"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      tape_input: "J"
+    output:
+      final_state: "q1"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      tape_input: "K"
+    output:
+      final_state: "q1"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      tape_input: "B"
+    output:
+      final_state: "q2"
+      tape_output: "Y"
+      tape_displacement: L
+  - params:
+      initial_state: "q2"  #Inicio q2
+      tape_input: "D"
+    output:
+      final_state: "q2"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q2" 
+      tape_input: "J"
+    output:
+      final_state: "q2"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q2"  
+      tape_input: "K"
+    output:
+      final_state: "q2"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q2" 
+      tape_input: "B"
+    output:
+      final_state: "q3"
+      tape_output: "B"
+      tape_displacement: R
+  - params:
+      initial_state: "q3"  #Inciio de q3
+      tape_input: "D"
+    output:
+      final_state: "q4"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q3"
+      tape_input: "J"
+    output:
+      final_state: "q4"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q3"
+      tape_input: "K"
+    output:
+      final_state: "q4"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q4"  #INicio de q4
+      tape_input: "Y"
+    output:
+      final_state: "q11"
+      tape_output: "Y"
+      tape_displacement: L
+  - params:
+      initial_state: "q4"  
+      tape_input: "D"
+    output:
+      final_state: "q5"
+      tape_output: "X"
+      tape_displacement: R
+  - params:
+      initial_state: "q4"  
+      tape_input: "J"
+    output:
+      final_state: "q6"
+      tape_output: "X"
+      tape_displacement: R
+  - params:
+      initial_state: "q4"  
+      tape_input: "K"
+    output:
+      final_state: "q7"
+      tape_output: "X"
+      tape_displacement: R
+  - params:
+      initial_state: "q5"   #Inicio de q5
+      tape_input: "D"
+    output:
+      final_state: "q5"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q5"  
+      tape_input: "J"
+    output:
+      final_state: "q5"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q5"  
+      tape_input: "K"
+    output:
+      final_state: "q5"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q5"  
+      tape_input: "Y"
+    output:
+      final_state: "q5"
+      tape_output: "Y"
+      tape_displacement: R
+  - params:
+      initial_state: "q5"  
+      tape_input: "B"
+    output:
+      final_state: "q8"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q6"  #Inicio Q6
+      tape_input: "D"
+    output:
+      final_state: "q6"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q6"
+      tape_input: "J"
+    output:
+      final_state: "q6"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q6"
+      tape_input: "K"
+    output:
+      final_state: "q6"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q6"
+      tape_input: "Y"
+    output:
+      final_state: "q6"
+      tape_output: "Y"
+      tape_displacement: R
+  - params:
+      initial_state: "q6"  
+      tape_input: "B"
+    output:
+      final_state: "q9"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q7"  #Inicio Q7
+      tape_input: "D"
+    output:
+      final_state: "q7"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q7" 
+      tape_input: "J"
+    output:
+      final_state: "q7"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q7" 
+      tape_input: "K"
+    output:
+      final_state: "q7"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q7" 
+      tape_input: "Y"
+    output:
+      final_state: "q7"
+      tape_output: "Y"
+      tape_displacement: R
+  - params:
+      initial_state: "q7" 
+      tape_input: "B"
+    output:
+      final_state: "q10"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q8"   #Inicio Q8
+      tape_input: "D"
+    output:
+      final_state: "q8"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q8"
+      tape_input: "J"
+    output:
+      final_state: "q8"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q8"
+      tape_input: "K"
+    output:
+      final_state: "q8"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q8"
+      tape_input: "Y"
+    output:
+      final_state: "q8"
+      tape_output: "Y"
+      tape_displacement: L
+  - params:
+      initial_state: "q8"
+      tape_input: "X"
+    output:
+      final_state: "q4"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q9"  #Inicio Q9
+      tape_input: "D"
+    output:
+      final_state: "q9"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q9"
+      tape_input: "J"
+    output:
+      final_state: "q9"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q9"
+      tape_input: "K"
+    output:
+      final_state: "q9"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q9"
+      tape_input: "Y"
+    output:
+      final_state: "q9"
+      tape_output: "Y"
+      tape_displacement: L
+  - params:
+      initial_state: "q9"
+      tape_input: "X"
+    output:
+      final_state: "q4"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q10" #Inicio q10
+      tape_input: "D"
+    output:
+      final_state: "q10"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q10"
+      tape_input: "J"
+    output:
+      final_state: "q10"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q10"
+      tape_input: "K"
+    output:
+      final_state: "q10"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q10"
+      tape_input: "Y"
+    output:
+      final_state: "q10"
+      tape_output: "Y"
+      tape_displacement: L
+  - params:
+      initial_state: "q10"
+      tape_input: "X"
+    output:
+      final_state: "q4"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q11"  #Inicio q11 
+      tape_input: "D"
+    output:
+      final_state: "q11"
+      tape_output: "D"
+      tape_displacement: L
+  - params:
+      initial_state: "q11"
+      tape_input: "J"
+    output:
+      final_state: "q11"
+      tape_output: "J"
+      tape_displacement: L
+  - params:
+      initial_state: "q11"
+      tape_input: "K"
+    output:
+      final_state: "q11"
+      tape_output: "K"
+      tape_displacement: L
+  - params:
+      initial_state: "q11"
+      tape_input: "B"
+    output:
+      final_state: "q12"
+      tape_output: "B"
+      tape_displacement: R
+  - params:
+      initial_state: "q12"  #Inicio Q12
+      tape_input: "D"
+    output:
+      final_state: "q13"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q12"
+      tape_input: "J"
+    output:
+      final_state: "q14"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q12"
+      tape_input: "K"
+    output:
+      final_state: "q15"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q13"  #Inicio q13
+      tape_input: "D"
+    output:
+      final_state: "q13"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q13"  
+      tape_input: "J"
+    output:
+      final_state: "q13"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q13"  
+      tape_input: "K"
+    output:
+      final_state: "q13"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q13"  
+      tape_input: "Y"
+    output:
+      final_state: "q16"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q14"   #Inicioo q14
+      tape_input: "D"
+    output:
+      final_state: "q14"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q14"  
+      tape_input: "J"
+    output:
+      final_state: "q14"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q14"  
+      tape_input: "K"
+    output:
+      final_state: "q14"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q14"  
+      tape_input: "Y"
+    output:
+      final_state: "q16"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q15"  #Inicio q15
+      tape_input: "D"
+    output:
+      final_state: "q15"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q15"  
+      tape_input: "J"
+    output:
+      final_state: "q15"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q15"  
+      tape_input: "K"
+    output:
+      final_state: "q15"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q15"  
+      tape_input: "Y"
+    output:
+      final_state: "q16"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q16"  #Inicio q16
+      tape_input: "D"
+    output:
+      final_state: "q16"
+      tape_output: "D"
+      tape_displacement: R
+  - params:
+      initial_state: "q16"  
+      tape_input: "J"
+    output:
+      final_state: "q16"
+      tape_output: "J"
+      tape_displacement: R
+  - params:
+      initial_state: "q16"  
+      tape_input: "K"
+    output:
+      final_state: "q16"
+      tape_output: "K"
+      tape_displacement: R
+  - params:
+      initial_state: "q16"  
+      tape_input: "B"
+    output:
+      final_state: "q_accept"
+      tape_output: "B"
+      tape_displacement: R
+simulation_strings:
+  - "DDJJKK"  # Entrada: DDJJKK, salida: DDJJKK
+  - "DDDJK"   # Entrada: DDDJK, salida: DDDJK
+  - "DJKKK"    # Entrada: DJ, salida: DJDJ
