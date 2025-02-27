@@ -1,0 +1,102 @@
+q_states:
+  q_list:
+    - "q0"
+    - "q1"
+    - "q2"
+    - "qreject"
+    - "qaccept"
+  initial: "q0"
+  final: "qaccept"
+alphabet:
+  - "0"
+  - "1"
+tape_alphabet:
+  - "0"
+  - "1"
+  - "B"
+delta:
+  - params:
+      initial_state: "q0"
+      mem_cache_value:
+      tape_input: "0"
+    output:
+      final_state: "q1"
+      mem_cache_value:
+      tape_output: "0"
+      tape_displacement: R
+  - params:
+      initial_state: "q0"
+      mem_cache_value:
+      tape_input: "1"
+    output:
+      final_state: "qreject"
+      mem_cache_value:
+      tape_output: "1"
+      tape_displacement: R
+  - params:
+      initial_state: "q0"
+      mem_cache_value:
+      tape_input: "B"
+    output:
+      final_state: "qreject"
+      mem_cache_value:
+      tape_output: "B"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      mem_cache_value:
+      tape_input: "0"
+    output:
+      final_state: "q1"
+      mem_cache_value:
+      tape_output: "0"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      mem_cache_value:
+      tape_input: "1"
+    output:
+      final_state: "q2"
+      mem_cache_value:
+      tape_output: "1"
+      tape_displacement: R
+  - params:
+      initial_state: "q1"
+      mem_cache_value:
+      tape_input: "B"
+    output:
+      final_state: "qreject"
+      mem_cache_value:
+      tape_output: "B"
+      tape_displacement: R
+  - params:
+      initial_state: "q2"
+      mem_cache_value:
+      tape_input: "0"
+    output:
+      final_state: "qreject"
+      mem_cache_value:
+      tape_output: "0"
+      tape_displacement: R
+  - params:
+      initial_state: "q2"
+      mem_cache_value:
+      tape_input: "1"
+    output:
+      final_state: "q2"
+      mem_cache_value:
+      tape_output: "1"
+      tape_displacement: R
+  - params:
+      initial_state: "q2"
+      mem_cache_value:
+      tape_input: "B"
+    output:
+      final_state: "qaccept"
+      mem_cache_value:
+      tape_output: "B"
+      tape_displacement: R
+simulation_strings:
+  - "00100"
+  - "110"
+  - "00011111111"
