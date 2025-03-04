@@ -86,7 +86,7 @@ class MT:
     #Simula la cadena
     def simulateMT(self):
         while True:
-            self.printCurrentTape()
+            # self.printCurrentTape()
             if self.currentState == self.final_state and self.machine_type == "reconocedora":
                 return True
 
