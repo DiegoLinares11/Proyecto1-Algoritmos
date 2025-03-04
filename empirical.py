@@ -1,8 +1,10 @@
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 
 # Listas para almacenar los datos
+input_decimals = []
 output_decoded = []
 times = []
 
@@ -17,14 +19,16 @@ with open("resultados_simulacion.csv", "r") as csvfile:
     # [3]: Salida (unaria)
     # [4]: Salida (decimal)
     for row in reader:
+        input_decimals.append(float(row[1]))
         times.append(float(row[2]))
         output_decoded.append(float(row[4]))
 
 # Convertir a arrays de NumPy
 times = np.array(times)
 output_decoded = np.array(output_decoded)
+input_decimals = np.array(input_decimals)
 
-# Ajuste polinómico de grado 2 (puedes cambiar el grado según lo que mejor se acople)
+# Ajuste polinómico de grado 2
 degree = 2
 coeffs = np.polyfit(output_decoded, times, degree)
 trend_poly = np.poly1d(coeffs)
@@ -43,3 +47,37 @@ plt.ylabel("Tiempo de Ejecución (segundos)")
 plt.grid(True)
 plt.legend()
 plt.show()
+
+# Crear el gráfico de Entrada (decimal) vs Tiempo de Ejecución
+plt.figure(figsize=(8, 6))
+plt.scatter(input_decimals, times, color='blue', marker='o', label="Datos")
+plt.title("Entrada (decimal) vs Tiempo de Ejecución")
+plt.xlabel("Entrada (decimal)")
+plt.ylabel("Tiempo (segundos)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# Crear el gráfico de Entrada (decimal) vs Salida (decimal)
+plt.figure(figsize=(8, 6))
+plt.scatter(input_decimals, output_decoded, color='green', marker='o', label="Datos")
+plt.title("Entrada (decimal) vs Salida (decimal)")
+plt.xlabel("Entrada (decimal)")
+plt.ylabel("Salida (decimal)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# Crear el gráfico de Entrada (decimal) vs Salida (decimal) en escala logarítmica
+plt.figure(figsize=(8, 6))
+plt.scatter(input_decimals, output_decoded, color='purple', marker='o', label="Datos")
+plt.yscale("log")
+plt.title("Entrada (decimal) vs Salida (decimal) (Escala Log)")
+plt.xlabel("Entrada (decimal)")
+plt.ylabel("Salida (decimal)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# Imprimimos los valores de ajuste
+print(f"Ajuste obtenido: T(n) ≈ {coeffs[0]:.2f}n^2 + {coeffs[1]:.2f}n + {coeffs[2]:.2f}")
